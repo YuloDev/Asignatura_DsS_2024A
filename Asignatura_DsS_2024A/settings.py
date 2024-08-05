@@ -77,14 +77,13 @@ WSGI_APPLICATION = 'Asignatura_DsS_2024A.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DJANGO_DB_NAME', 'marketplace_4bzf'),
         'USER': os.getenv('DJANGO_DB_USER', 'usr'),
         'PASSWORD': os.getenv('DJANGO_DB_PASSWORD', 'YvukhoS8EAXr2Qay5ibkgZ6We4iB6r8o'),
-        'HOST': os.getenv('DJANGO_DB_HOST', 'https://dashboard.render.com/d/dpg-cqo9j8bv2p9s73am6ckg-a/info'),
+        'HOST': os.getenv('DJANGO_DB_HOST', 'dpg-cqo9j8bv2p9s73am6ckg-a'),
         'PORT': '5432',
     }
 }
