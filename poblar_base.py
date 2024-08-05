@@ -40,11 +40,9 @@ for nombre in nombres_productos:
     producto = Producto(
         nombre=nombre,
         categoria=random.choice(categorias),
-        unidades_vendidas=random.randint(0, 100),
         vendedor=random.choice(vendedores),
         precio=round(random.uniform(5.0, 100.0), 2),
         costo=round(random.uniform(2.0, 50.0), 2),
-        supera_record=random.choice([True, False])
     )
     producto.save()
 
