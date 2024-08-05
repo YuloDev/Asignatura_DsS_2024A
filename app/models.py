@@ -29,3 +29,14 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Log(models.Model):
+    level = models.CharField(max_length=50)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    module = models.CharField(max_length=100)
+    function = models.CharField(max_length=100)
+    line = models.IntegerField()
+
+    def __str__(self):
+        return f'{self.level} - {self.timestamp} - {self.message}'

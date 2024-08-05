@@ -126,6 +126,33 @@ USE_I18N = True
 
 USE_TZ = True
 
+# settings.py
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'db': {
+            'level': 'DEBUG',
+            'class': 'path.to.your.DatabaseLogHandler',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['db'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+
+
+# settings.py
+
+
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
