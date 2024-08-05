@@ -1,9 +1,8 @@
 import logging
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm, LoginForm
+from .forms import CustomUserCreationForm, LoginForm, ProductoForm
 from .models import Producto, Categoria
-from .forms import ProductoForm
 from .decorators import seller_required  # decorador de seguridad
 
 logger = logging.getLogger(__name__)
@@ -43,7 +42,7 @@ def registro(request):
         if form.is_valid():
             user = form.save()
             logger.info(f'Nuevo usuario registrado: {user.username}')
-            return redirect('login')
+            return redirect('inicio_sesion')  # Asumiendo que el nombre de la URL es 'inicio_sesion'
         else:
             logger.warning('Formulario de registro no válido.')
     else:

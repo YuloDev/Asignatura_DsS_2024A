@@ -134,7 +134,7 @@ LOGGING = {
     'handlers': {
         'db': {
             'level': 'DEBUG',
-            'class': 'path.to.your.DatabaseLogHandler',
+            'class': 'app.logs.DatabaseLogHandler',  # Ajustar la ruta según la ubicación de logs.py
         },
     },
     'loggers': {
