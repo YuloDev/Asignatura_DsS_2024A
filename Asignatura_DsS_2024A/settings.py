@@ -136,7 +136,7 @@ LOGGING = {
     'handlers': {
         'db': {
             'level': 'DEBUG',
-            'class': 'app.incident.DatabaseLogHandler',
+            'class': 'app.DatabaseLogHandler',
         },
     },
     'loggers': {
