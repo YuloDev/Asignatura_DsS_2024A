@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8000
 
 # Comando para correr la aplicación
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "Asignatura_DsS_2024A.wsgi:application"]
