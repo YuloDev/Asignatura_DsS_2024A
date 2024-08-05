@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Vendedor - Agregar Productos{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Agregar Producto</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Agregar Producto</button>
+    </form>
+
+    <h3 class="mt-4">Mis Productos</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Costo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.categoria }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.costo }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No tienes productos.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
